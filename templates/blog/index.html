@@ -1,0 +1,204 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+    <title>simple world! Here you can find varieties article</title>
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="card text-right">
+            <img class="card-img-top" src="{{last_post.image.url}}" alt="">
+            <div class="card-body">
+                <p class="category">{{last_post.category}}</p>
+                <a href="{% url 'detail' last_post.id %}">
+                    <h4 class="card-title">{{last_post.title}}</h4>
+                </a>
+                <p class="card-text">{{last_post.text | truncatewords:60 | safe }}</p>
+                <div class="card-other">
+                    <img src="{{last_post.post_author.profile_pic.url}}" alt="">
+                    <a href="{% url 'author' last_post.post_author.name.username %}"><p class="card-author">{{last_post.post_author.name}} <span>in</span> </p></a> <a href="{% url 'category' last_post.id %}"><p>{{last_post.category.name}}</p></a>
+                </div>
+                <p class="post-time"> {{last_post.time}} </p>
+            </div>
+        </div>
+
+            
+
+
+        <div class="heading">
+            <h4>Recent Post</h4>
+        </div>
+        <div class="recent">
+            <div class="recent-main">
+
+                {% for rcn in recent %}
+                <div class="card text-left">
+                    <img class="card-img-top" src="{{rcn.image.url}}" alt="">
+                    <div class="card-body">
+                        <a href="{% url 'detail' rcn.id %}">
+                            <h4 class="card-title">{{rcn.title}}</h4>
+                        </a>
+                        <p class="card-text">{{rcn.text | truncatewords:10 | safe }}</p>
+                        <div class="card-other">
+                            <img src="{{rcn.post_author.profile_pic.url}}" alt="">
+                        <a href="{% url 'author' rcn.post_author.name.username %}"> <p class="card-author">{{rcn.post_author.name}} <span>in</span>  </p></a> <a href="{% url 'category' rcn.id %}"><p>{{rcn.category}}</p></a> 
+                        </div>
+                        <p class="post-time"> {{rcn.time}} </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+
+            <div class="recent-side">
+                {% for r in recent_more %}
+                <div class="card text-left">
+                    <img class="card-img-top" src=" {{r.image.url}} " alt="">
+                    
+                    <div class="card-body">
+                        <a href="{% url 'detail' r.id %}">
+                            <h4 class="card-title">{{r.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                          <a href="{% url 'author' r.post_author.name.username %}"><p class="card-author">{{r.post_author.name}} <span>in</span>  </p></a> <a href="{% url 'category' r.id %}"><p>{{more.category}}</p></a>
+                        </div>
+                        <p class="post-time"> {{more.time}} </p>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+
+        </div>
+
+
+        <!-- Popular and trending -->
+        
+        <div class="popular">
+            <div class="popular-post">
+                <div class="heading">Popular posts</div>
+
+                {% for more in popular %}
+                <div class="card text-left">
+                    <img class="card-img-top" src=" {{more.image.url}} " alt="">
+                    <div class="card-body">
+                        <a href="{% url 'detail' more.id %}">
+                            <h4 class="card-title">{{more.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                       <a href="{% url 'author' more.post_author.name.username %}">  <p class="card-author">{{more.post_author.name}} <span>in</span> </p></a> <a href="{% url 'category'  more.id %}"><p>{{more.category}} </p></a>
+                        </div>
+                        <p class="post-time"> {{more.time}} </p>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+
+            <div class="trending-post">
+                <div class="heading">Trending posts</div>
+                 {% for more in trending %}
+                <div class="card text-left">
+                    
+                    <div class="card-body">
+                        
+                        <a href="{% url 'detail' more.id %}">
+                            <span class="counter">0{{forloop.counter}}</span> 
+
+                            <h4 class="card-title">{{more.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                          <a href="{% url 'author' more.post_author.name.username %}">  <p class="card-author">{{more.post_author.name}} <span>in</span>  </p></a> <a href="{% url 'category'  more.id %}"><p>{{more.category}}</p></a>
+                        </div>
+                        <p class="post-time"> {{more.time}} </p>
+
+                    </div>
+                    
+                    <img class="card-img-top" src=" {{more.image.url}} " alt="">
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+
+        <!-- End -->
+
+
+        <!-- Other all  post -->
+        <div class="others" >
+            <div class="other-post">
+                <div class="heading">Posts</div>
+
+                {% for p in posts %}
+                <div class="card text-left">
+                    <img class="card-img-top" src=" {{p.image.url}} " alt="">
+                    <div class="card-body">
+                        <a href="{% url 'detail' p.id %}">
+                            <h4 class="card-title">{{p.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                           <a href="{% url 'author' p.post_author.name.username %}"> <p class="card-author">{{p.post_author.name}} <span>in</span> </p></a> <a href="{% url 'category' p.id %}"><p>{{p.category}} </p></a>
+                        </div>
+                        <p class="post-time"> {{p.time}} </p>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+                <div class="pagination" >
+                    <span class="step-links">
+                        {% if posts.has_previous %}
+                            <a href="?page={{ posts.previous_page_number }}" > <i class="fa fa-arrow-left" aria-hidden="true"></i> </a>
+                        {% endif %}
+                
+                        <span class="current">
+                             {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                        </span>
+                
+                        {% if posts.has_next %}
+                            <a href="?page={{ posts.next_page_number }}"> <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                        {% endif %}
+                    </span>
+                </div>  
+            </div>
+
+            <div class="categories">
+                <div class="heading"> Post Category </div>
+                    <ul>
+                        <li><a href="#">Bussiness</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Health</a></li>
+                        <li><a href="#">Study</a></li>
+                        
+                    </ul>
+                
+            </div>
+        </div>
+
+        <!-- End -->
+
+
+       
+    </div>
+
+
+</body>
+
+</html>
+
+{% endblock content %}

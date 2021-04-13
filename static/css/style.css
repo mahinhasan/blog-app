@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Mukta:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Mukta:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content{
+    width: 60%;
+    margin:0 auto;
+    
+}
+
+
+.content .arrow{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.card{
+
+    display: flex;
+    padding-top: 50px;
+    height: 450px;
+}
+
+.content .card .card-body{
+    background-color: #f8f9fa;
+    width: 100%;
+    padding: 50px;
+}
+
+.content .card .card-img-top{
+    width:50% ;
+    height: 400px;
+}
+.content .card .card-body .category{
+    font-weight: normal;
+    color: rgb(117, 116, 116);
+    font-size: 14px;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.content .card .card-body .card-title{
+    font-size: 30px;  
+    font-family: 'Crimson Text', serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 35px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.content .card .card-body .card-text{
+    color: rgb(117, 116, 116);
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    line-height: 20px;
+}
+
+.content .card .card-body .card-other{
+    padding-top: 10px;
+    display: flex;
+       
+    font-family: 'Crimson Text', serif;
+}
+.content .card .card-body .card-other img{
+    height: 15px;
+    width: 15px;
+    border-radius: 30%;
+    margin-right: 10px;
+}
+.content .card .card-body .card-other .card-author{
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding-right: 10px;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+.content .card .card-body .card-other .card-author span{
+    font-weight: normal;
+    color: #949496;
+    text-transform: lowercase;
+}
+
+.content .card .card-body .post-time{
+   color: #949496;
+}
+
+
+
+/* Recent post */
+
+
+
+.content .heading{
+    padding-top: 100px;
+    font-size: 25px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: 'Crimson Text', serif;
+    text-decoration-line:inherit;
+    font-weight: normal;
+    color: #303031;
+    
+}
+
+.content .recent{
+    display: flex;
+    height: 650px;
+}
+
+.content .recent .recent-main{
+    height: 610px;
+    width: 50%;
+}
+
+.content .recent .recent-main .card{
+    display: block;
+    width: 85%;
+    height: 600px;
+    
+
+}
+
+.content .recent .recent-main .card .card-img-top{
+    width: 100%;
+    height: 300px;
+    
+}
+
+.content .recent .recent-main .card .card-body{
+    height: 250px;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.content .recent .recent-main .card .card-body  .card-title{
+    color: red;
+    font-size: 20px;
+    
+}
+
+
+.content .recent .recent-main .card .card-body .card-text{
+    color: red;
+    font-size: 10px;
+    color: #949496;
+    
+    
+}
+
+
+.content .recent .recent-side{
+    width: 60%;
+    
+    
+}
+
+.content .recent .recent-side .card{
+    width: 100%;
+    height: 150px;
+    
+}
+
+.content .recent .recent-side .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0px;
+    background-color: white;
+    
+}
+.content .recent .recent-side .card .card-img-top{
+    width: 30%;
+    height:100%;
+    
+}
+
+.content .recent .recent-side .card .card-body .card-title{
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.content .recent .recent-side .card .card-body .card-other .card-author{
+    
+    padding: 0px;
+    margin: 0px;
+}
+
+.content .recent .recent-side .card .card-body .post-time{
+    font-size: 13px;
+}
+
+
+
+
+/* popular and recent */
+
+.popular{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+
+.popular .popular-post{
+    width: 49%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.popular .trending-post{
+    width:49%;
+    
+}
+
+.popular .popular-post .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+.popular .trending-post .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+
+.popular .popular-post .card {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    margin: 0;
+    
+}
+
+.popular .popular-post .card .card-img-top{
+    width: 38%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.popular .popular-post .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+    
+}
+.popular .popular-post .card .card-body .card-title{
+    font-size: 20px;
+    
+}
+
+
+.popular .trending-post .card {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+.popular .trending-post .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+}
+
+.popular .trending-post .card .card-body .card-title{
+    font-size: 20px;
+    
+}
+
+.popular .trending-post .card .card-img-top{
+    width: 38%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.popular .trending-post .card .counter{
+    text-align: center;
+    font-size: 25px;
+    align-items: center;
+    justify-items: center;
+    color: #c5c5ca;
+}
+/* End */
+
+
+
+/* Others post */
+
+
+
+
+.others{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+
+.others .other-post{
+    width: 70%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+
+.others .categories{
+    width:30%;
+}
+
+.others .other-post .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+.others .categories .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+
+.others .other-post  .card {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    margin: 0;
+   
+    
+}
+
+.others .other-post  .card .card-img-top{
+    width: 40%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.others .other-post  .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin: 0;
+    background-color:rgba(250, 250, 250, 0.692);
+    
+}
+.others .other-post  .card .card-body .card-title{
+    font-size: 20px;
+    
+
+}
+
+ 
+/* 
+.others .categories{
+    position: fixed;
+    width: 10%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #041230;
+    z-index: 100;
+    min-width: 170px;
+} */
+
+
+.others .categories ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:5px;
+    margin: 0;
+}
+.others .categories ul li{
+
+    border: 2px solid rgb(219, 224, 219);
+    width: 30%;
+    height: 10%;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.others .categories ul li a{
+    padding-bottom: 10px;
+}
+
+.others .categories .card .counter{
+    text-align: center;
+    font-size: 25px;
+    align-items: center;
+    justify-items: center;
+    color: #c5c5ca;
+}
+
+
+.others .pagination{
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    color: black;
+    letter-spacing: 5px;
+}
+
+.others .pagination .step-links i{
+    border: 1px solid rgb(192, 192, 197);
+    padding: 5px;
+    margin: 3px;
+    width: 40px;
+    background-color: #d5d5d8;
+    text-align: center;
+}
+
+.others .pagination .step-links .current{
+    border: 1px solid slategrey;
+    width: 40px;
+    padding: 4px;
+    background-color: rgb(223, 222, 222);
+}
+
+
+/* End */
+
+
+/* footer */
+
+.footer{
+    background-color: #bdbdc213;
+    height: 200px;
+    
+}
+
+
+.footer .copyright{
+    padding: 100px;
+    text-align: center;
+}
+.footer .copyright span{
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+.footer .copyright  s{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'EB Garamond', serif;
+
+    
+}
+
+
+
+/* End footer */

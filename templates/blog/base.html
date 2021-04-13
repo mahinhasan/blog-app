@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <title>simple world! Here you can find varieties article</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="top-nav">
+            <div class="left">
+                <div class="logo">
+                    <p><span>Simple</span>World</p>
+                </div>
+                <div class="search-bar">
+                    <form action="{% url 'search' %}" method="GET">
+                        <input type="text" name="q" placeholder="Search">    
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="right">
+                <ul class="ul">
+                    {% if user.is_authenticated %}
+
+                    
+
+                    <li>
+                        <div class="action">
+                            <div class="profile" onclick="menuToggle();">
+                                <img src="{% static 'images/mahin.jpg' %}" alt="">
+                            </div>
+                            <div class="menu">
+                                <h4> {{user.first_name}} <br><span> {{user.profile.name}} </span></h4>
+
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-user-circle-o " aria-hidden="true"></i>
+                                        profile</a></li>
+                                    {% if user.is_superuser %}
+                                    <li><a href="{% url 'create' %}"><i class="fa fa-plus " aria-hidden="true"></i>
+                                       Create New Post</a></li>
+                                    {% endif %}
+                                    <li><a href="{% url 'logout' %}"> <i class="fa fa-sign-out " aria-hidden="true"></i>
+                                        Logout</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="li"><a href="{% url 'register' %}"> <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="{% url 'login' %}"> <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i> </a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="bottom-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Health</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Sport</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+    {% block content %}
+
+    {% endblock content %}
+
+
+    <div class="footer">
+
+
+        <div class="copyright">
+            <p>Copyright ©2021 All rights reserved | This template is made with by <span>Simple</span><s>World</s></p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector(".bottom-nav");
+            header.classList.toggle("sticky", window.scrollY > 100)
+        });
+
+        function menuToggle() {
+            var toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active')
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
