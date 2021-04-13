@@ -70,7 +70,7 @@ form .button input{
     width: 100%;
     outline: none;
     color: #fff;
-    background-color: cadetblue;
+    background-color: rgba(0, 0, 0, 0.795);
     border: none;
     padding: 5px;
     font-size: 20px;

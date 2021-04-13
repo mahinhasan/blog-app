@@ -1,341 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Mukta:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&family=Mukta:wght@200&display=swap');
+
 *{
-    padding:0%;
-    margin:0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-h1 , h2, h3, h4,h6 , a{
-    list-style: none;
-    text-decoration: none;
-}
-
-
-
-.title{
-    list-style: none;
-    text-decoration: none;
-}
-
-span{
-    font-size: 14px;
-    
-    
-
-}
-/* Content */
-
-.clearfix::after{
-    content: '';
-    display: block;
-    clear: both;
 }
 
 .content{
+    width: 60%;
+    margin:0 auto;
+    
+}
+
+
+.content .arrow{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.card{
+
+    display: flex;
+    padding-top: 50px;
+    height: 450px;
+}
+
+.content .card .card-body{
+    background-color: #f8f9fa;
+    width: 100%;
+    padding: 50px;
+}
+
+.content .card .card-img-top{
+    width:50% ;
+    height: 400px;
+}
+.content .card .card-body .category{
+    font-weight: normal;
+    color: rgb(117, 116, 116);
+    font-size: 14px;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.content .card .card-body .card-title{
+    font-size: 30px;  
+    font-family: 'Crimson Text', serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 35px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.content .card .card-body .card-text{
+    color: rgb(117, 116, 116);
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-top: 5px;
+    line-height: 20px;
+}
+
+.content .card .card-body .card-other{
+    padding-top: 10px;
+    display: flex;
+       
+    font-family: 'Crimson Text', serif;
+}
+.content .card .card-body .card-other img{
+    height: 15px;
+    width: 15px;
+    border-radius: 30%;
+    margin-right: 10px;
+}
+.content .card .card-body .card-other .card-author{
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding-right: 10px;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+}
+.content .card .card-body .card-other .card-author span{
+    font-weight: normal;
+    color: #949496;
+    text-transform: lowercase;
+}
+
+.content .card .card-body .post-time{
+   color: #949496;
+}
+
+
+
+/* Recent post */
+
+
+
+.content .heading{
+    padding-top: 100px;
+    font-size: 25px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-family: 'Crimson Text', serif;
+    text-decoration-line:inherit;
+    font-weight: normal;
+    color: #303031;
+    
+}
+
+.content .recent{
+    display: flex;
+    height: 650px;
+}
+
+.content .recent .recent-main{
+    height: 610px;
+    width: 50%;
+}
+
+.content .recent .recent-main .card{
+    display: block;
     width: 85%;
-    margin:10px 82px  30px;
+    height: 600px;
+    
+
 }
 
-.content .main-content{
-    width: 30%;
-    float: left;
-  
-}
-
-.content .main-content .post{
+.content .recent .recent-main .card .card-img-top{
     width: 100%;
     height: 300px;
-    margin: 10px auto;
-    border-radius: 4px;
-}
-
-.content .main-content .post img{
-    width: 94%;
-    widows: 80%;
-    height: 90%;
-
-}
-
-.content .main-content .post .post-preview{
-    width: 94%;
-    padding-top: 20px;
     
 }
 
-.content .main-content .post .post-preview .author{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-}
-.content .main-content .post .post-preview span{
-    margin-right: 10px;
-}
-.content .main-content .post .post-preview a{
-   color: black;
-   text-decoration: none!important ;
-   text-transform: capitalize;
-   font-weight: 500;
-   font-family: 'Oswald', sans-serif;
-   
+.content .recent .recent-main .card .card-body{
+    height: 250px;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
 }
 
-/* Side bar  */
-.content .sidebar{
+
+.content .recent .recent-main .card .card-body  .card-title{
+    color: red;
+    font-size: 20px;
+    
+}
+
+
+.content .recent .recent-main .card .card-body .card-text{
+    color: red;
+    font-size: 10px;
+    color: #949496;
+    
+    
+}
+
+
+.content .recent .recent-side{
     width: 60%;
-    float: left;
-    height: 500px;
-    
-}
-
-.content .side-content{
-    width: 45%;
-    float: left;
-    border-right: 1px solid rgba(216, 211, 211, 0.822);
     
     
 }
 
-.content .side-content .side-post{
-    padding-top: 2px;
-    width: 80%;
-    height: 480px;
-    margin: 10px auto;
-    border-radius: 5px;
- 
-}
-
-.content .side-content .side-post .post-image{
-    width: 40% ;
-    widows: 60%;
-    height: 20%;
-    float: left;
-    padding-right: 30px;
-    clear: both;
-    
-}
-
-.content .side-content .side-post .side-preview-post{
-    margin-left: 30px;
-    font-size: 24px;
-    text-decoration: none;
-    
-
-}
-
-.content .side-content .side-post .side-preview-post h6{
-    margin-left: 30px;
-
-    text-decoration: none;
-    font-family: 'Oswald', sans-serif;
-
-}
-
- a{
-    text-decoration: none;
-    color: black;
-}
-
-.content .side-content .side-post .side-preview-post .side-author{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-}
-
-
-/* Other side content */
-.content .other-side-content{
-    width: 20%;
-    float: left;
-    padding-left: 20px;
-    
-}
-
-.content .other-side-content .other-side-title{
-    padding-bottom: 20px;
-    padding-top: 20px;
-    
-    font-family: 'Oswald', sans-serif;
-    font-size:25px ;
-}
-
-.content .other-side-content .other-side-title img{
-    width: 70px;
-    height: 60px;
-    border-radius: 10%;
-    padding: 3px;
-}
-
-.content .other-side-content .other-side-post .other-side-topic span{
-    width: 40%;
-    height: 30%;
-    float: left;
-    border: 1px solid rgb(179, 174, 163);
-    text-align: center;
-    padding: 3px ;
-    margin: 3px;
-    text-decoration: none;
-    color: black;
-}
-.content .other-side-content .other-side-post .other-side-topic span:hover{
-    background-color: antiquewhite;
-}
-
-
-/* Tredding */
-
-.trending{
-    width: 85%;
-    margin:30px 84px  30px;
-    padding-left: 80px;
-
-}
-
-.trending .post{
-    padding-bottom: 20px;
-    
-
-}
-
-.trending .post img{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border-radius: 50%;
-  
-}
-
-.trending .trending-title{
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
-}
-
-.trending .post h6{
-    font-weight: 700;
-    font-size: 18px;
-    font-family: 'Work Sans', sans-serif;
-}
-
-.trending .post .author{
-    font-family: 'PT Serif', serif;
-}
-
-.trending .post span{
-    font-family: 'PT Serif', serif;
-    font-size: 12px;
-}
-
-/* Extra post */
-
-.extra-post{
-    box-sizing: border-box;
+.content .recent .recent-side .card{
     width: 100%;
-}
-
-.extra-post .post{
-    padding-left: 80px;
-   
-  
-}
-
-.extra-post .post img{
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-  
-  
-}
-
-.extra-post .post .allpost .post-image{
-    width: 25%;
-    height: 30%;
-    float: left;
-    padding-right: 20px;
+    height: 150px;
     
 }
 
-.extra-post .post .allpost .author{
-    font-family: 'PT Serif', serif;
+.content .recent .recent-side .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0px;
+    background-color: white;
+    
+}
+.content .recent .recent-side .card .card-img-top{
+    width: 30%;
+    height:100%;
+    
+}
+
+.content .recent .recent-side .card .card-body .card-title{
+    font-size: 20px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.content .recent .recent-side .card .card-body .card-other .card-author{
+    
+    padding: 0px;
+    margin: 0px;
+}
+
+.content .recent .recent-side .card .card-body .post-time{
     font-size: 13px;
-
-}
-
-.extra-post .post .allpost a{
-    font-weight: 800;
-   text-decoration: none;
-   color: black;
-    font-family: 'Work Sans', sans-serif;
 }
 
 
 
-.extra-post .post .allpost p{
-    font-weight: 20;
+
+/* popular and recent */
+
+.popular{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
    
-    font-family: 'Work Sans', sans-serif;
-}
-.extra-post .post .allpost{
-    padding-bottom: 40px;
 }
 
 
-.extra-post .side-follow{
- background-color: aqua; 
- height: 100%; 
- align-items: center; 
+.popular .popular-post{
+    width: 49%;
+    margin: 0px;
+    padding: 0px;
 }
 
 
-
-
-@media screen and (max-width:784px){
+.popular .trending-post{
+    width:49%;
     
-    .content{
-        width: 100%;
-        margin: 10px;
-    }
-
-    .content .main-content {
-        width: 100%;
-        height: 55vh;
-        
-        
-    }
-
-    .content .side-content{
-        width: 100%;
-        height: 60vh;
-        padding-left: 0px;
-        margin-top: 20px;
-            
-       
-    }
-    .content .side-content .side-post{
-        padding-top: 2px;
-        width: 100%;
-        height: 480px;
-        margin: 10px auto;
-        border-radius: 5px;
-     
-    }
-    .content .other-side-content{
-        display: none;
-    }
-
-    .trending{
-        width: 85%;
-        margin:30px 84px  30px;
-        padding-left: 10px;
-    
-    }
-    .extra-post .post{
-        padding-left: 20px;
-       
-      
-    }
 }
+
+.popular .popular-post .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+.popular .trending-post .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+
+.popular .popular-post .card {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    margin: 0;
+    
+}
+
+.popular .popular-post .card .card-img-top{
+    width: 38%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.popular .popular-post .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+    
+}
+.popular .popular-post .card .card-body .card-title{
+    font-size: 20px;
+    
+}
+
+
+.popular .trending-post .card {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+.popular .trending-post .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 0;
+    background-color: white;
+}
+
+.popular .trending-post .card .card-body .card-title{
+    font-size: 20px;
+    
+}
+
+.popular .trending-post .card .card-img-top{
+    width: 38%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.popular .trending-post .card .counter{
+    text-align: center;
+    font-size: 25px;
+    align-items: center;
+    justify-items: center;
+    color: #c5c5ca;
+}
+/* End */
+
+
+
+/* Others post */
+
+
+
+
+.others{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin: 0px;
+   
+}
+
+
+.others .other-post{
+    width: 70%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+
+.others .categories{
+    width:30%;
+}
+
+.others .other-post .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+.others .categories .heading{
+    font-size: 20px;
+    padding-left: 7px;
+    padding-bottom: 20px;
+}
+
+.others .other-post  .card {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    margin: 0;
+   
+    
+}
+
+.others .other-post  .card .card-img-top{
+    width: 40%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.others .other-post  .card .card-body{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin: 0;
+    background-color:rgba(250, 250, 250, 0.692);
+    
+}
+.others .other-post  .card .card-body .card-title{
+    font-size: 20px;
+    
+
+}
+
+ 
+/* 
+.others .categories{
+    position: fixed;
+    width: 10%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #041230;
+    z-index: 100;
+    min-width: 170px;
+} */
+
+
+.others .categories ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding:5px;
+    margin: 0;
+}
+.others .categories ul li{
+
+    border: 2px solid rgb(219, 224, 219);
+    width: 30%;
+    height: 10%;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.others .categories ul li a{
+    padding-bottom: 10px;
+}
+
+.others .categories .card .counter{
+    text-align: center;
+    font-size: 25px;
+    align-items: center;
+    justify-items: center;
+    color: #c5c5ca;
+}
+
+
+.others .pagination{
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    color: black;
+    letter-spacing: 5px;
+}
+
+.others .pagination .step-links i{
+    border: 1px solid rgb(192, 192, 197);
+    padding: 5px;
+    margin: 3px;
+    width: 40px;
+    background-color: #d5d5d8;
+    text-align: center;
+}
+
+.others .pagination .step-links .current{
+    border: 1px solid slategrey;
+    width: 40px;
+    padding: 4px;
+    background-color: rgb(223, 222, 222);
+}
+
+
+/* End */
+
+
+/* footer */
+
+.footer{
+    background-color: #bdbdc213;
+    height: 200px;
+    
+}
+
+
+.footer .copyright{
+    padding: 100px;
+    text-align: center;
+}
+.footer .copyright span{
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+
+.footer .copyright  s{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'EB Garamond', serif;
+
+    
+}
+
+
+
+/* End footer */

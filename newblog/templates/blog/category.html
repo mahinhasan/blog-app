@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/category.css' %}">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="content">
+           <div class="article-side">
+            {% for p in post %}
+            <div class="card text-left">
+                <span>Published category by {{p.category}}</span>
+               <a href="{% url 'detail' p.id %}"><h4 class="card-title">{{p.title}}</h4></a> 
+                <div class="card-body">
+                    <img class="card-img-top" src="{{ p.image.url }}" alt="">
+                    <br>
+                    <span><a href="{% url 'author' p.post_author.name.username %}"><p class="card-author" style="color: rgb(156, 153, 153);">Posted by {{p.post_author.name}} </p></a>{{p.time}}</span>
+                  <p class="card-text">{{p.text|safe| truncatewords:60}} </p>
+
+                </div>
+
+              </div>
+            {% endfor %}
+                
+           
+           </div>
+        </div>
+    </body>
+    </html>    
+{% endblock content %}
+

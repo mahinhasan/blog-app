@@ -15,7 +15,6 @@
     font-family: 'Times New Roman', Times, serif;
 }
 #id_title{
-    background-color: rgb(231, 217, 243);
     width: 100%;
 }
 
@@ -25,10 +24,19 @@
 
 #id_image{
     width: 100%;
-    background-color: rgb(231, 217, 243);
     padding: 5px ;
     margin-top: 2px;
-    border: 1px solid black;
+    border: 1px solid rgba(158, 156, 156, 0.788);
+    text-align: center;
+    
+}
+
+#id_category{
+    width: 100%;
+    padding: 5px ;
+    margin-top: 2px;
+    border: 1px solid rgba(158, 156, 156, 0.788);
+    text-align: center;
 }
 
 

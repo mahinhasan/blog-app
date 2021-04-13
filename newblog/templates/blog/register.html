@@ -17,14 +17,25 @@
     <title>Document</title>
 </head>
 <body >
-    <hr>
+    
     <div class="container">
         
         <form action="#" method="POST">
 
             {% csrf_token %}
             <div class="title">Registration Here</div>
+
+            <div class="message" style="color: red;">
+                    
+                {% for message in messages %}
+                    sorry! <h4>{{message}}</h4>
+                {% endfor %}
+            </div>
+
             <div class="user-details">
+
+            
+                    
                 <div class="input-box">
                     <span class="details">Enter Full Name</span>
                     <input type="text" name="name" value="" placeholder="Enter Your Name" required>
@@ -47,15 +58,17 @@
                 </div>
                 <div class="input-box">
                     <span class="details">Password</span>
-                    <input type="text" name="password" value="" placeholder="password" required>
+                    <input type="password" name="password" value="" placeholder="password" required>
 
                 </div>
                 <div class="input-box">
                     <span class="details">Confirm password</span>
-                    <input type="text" name="confirm" value="" placeholder="Confirm password" required>
+                    <input type="password" name="confirm" value="" placeholder="Confirm password" required>
 
                 </div>
             </div>
+           
+
             <div class="button">
                 <input type="submit" value="Resiger">
             </div>

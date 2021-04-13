@@ -5,135 +5,197 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css">
+    <title>simple world! Here you can find varieties article</title>
 </head>
 
 <body>
- 
-    <div class="container">
-        <div class="content clearfix">
-            <div class="main-content">
 
-                
-                
-                {% for res in result %}
-                
-                <div class="post">
-                    <img src="{{res.image.url}}" alt="" class="post-image">
-                    <div class="post-preview">
-                        <img class="author" src="{{res.image.url}}" alt="">
-                        
-                        
-                            
-                        <a href="#">{{res.post_author.name }}</a>
-                       
-                            
-                        <h4 class="title"><a href="{% url 'detail' res.id %}">{{res.title}}</a></h4>
-                        <p class="preview-text">
-                            {{res.text|safe|truncatechars:30}}
-                        </p>
-                        <a href="#"><span>Read more</span></a><span>{{res.time}}</span>
+    <div class="content">
+        <div class="card text-right">
+            <img class="card-img-top" src="{{last_post.image.url}}" alt="">
+            <div class="card-body">
+                <p class="category">{{last_post.category}}</p>
+                <a href="{% url 'detail' last_post.id %}">
+                    <h4 class="card-title">{{last_post.title}}</h4>
+                </a>
+                <p class="card-text">{{last_post.text | truncatewords:60 | safe }}</p>
+                <div class="card-other">
+                    <img src="{{last_post.post_author.profile_pic.url}}" alt="">
+                    <a href="{% url 'author' last_post.post_author.name.username %}"><p class="card-author">{{last_post.post_author.name}} <span>in</span> </p></a> <a href="{% url 'category' last_post.id %}"><p>{{last_post.category.name}}</p></a>
+                </div>
+                <p class="post-time"> {{last_post.time}} </p>
+            </div>
+        </div>
+
+            
+
+
+        <div class="heading">
+            <h4>Recent Post</h4>
+        </div>
+        <div class="recent">
+            <div class="recent-main">
+
+                {% for rcn in recent %}
+                <div class="card text-left">
+                    <img class="card-img-top" src="{{rcn.image.url}}" alt="">
+                    <div class="card-body">
+                        <a href="{% url 'detail' rcn.id %}">
+                            <h4 class="card-title">{{rcn.title}}</h4>
+                        </a>
+                        <p class="card-text">{{rcn.text | truncatewords:10 | safe }}</p>
+                        <div class="card-other">
+                            <img src="{{rcn.post_author.profile_pic.url}}" alt="">
+                        <a href="{% url 'author' rcn.post_author.name.username %}"> <p class="card-author">{{rcn.post_author.name}} <span>in</span>  </p></a> <a href="{% url 'category' rcn.id %}"><p>{{rcn.category}}</p></a> 
+                        </div>
+                        <p class="post-time"> {{rcn.time}} </p>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-            <div class="side-content clearfix">
-                <div class="side-post">
-                    {% for art in article %}
-                    <img class="post-image" src="{{art.image.url}}" alt="">
-                    <div class="side-preview-post">
 
-                        <img class="side-author" src="{% static 'images/nature.jpg' %}" alt=""> <span>{{art.post_author.name }}</span>
-                        &nbsp;
-                        <h6><a style="text-decoration: none;color:black"
-                                href="{% url 'detail' art.id %}">{{art.title}}</a></h6>
 
-                        <span>{{art.time}}</span>
-                    </div>
-                    <br>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="other-side-content clearfix">
-                <div class="other-side-post">
-                    <div class="other-side-title">
-                        <h6>Latest From follow</h6>
-                        <img src="{% static 'images/mahin.jpg' %}" alt="">
-                        <img src="{% static 'images/mahin.jpg' %}" alt="">
-
-                        <img src="{% static 'images/mahin.jpg' %}" alt="">
-                    </div>
-                    <div class="other-side-topic">
-                        <h6>Topics You Follow</h6>
-                        <div>
-                            <a href="#"><span>Politics</span></a>
-                            <a href="#"><span>Helth</span></a>
-                            <a href="#"><span>Science</span></a>
-                            <a href="#"><span>IT</span></a>
-                            <a href="#"><span>People</span></a>
+            <div class="recent-side">
+                {% for r in recent_more %}
+                <div class="card text-left">
+                    <img class="card-img-top" src=" {{r.image.url}} " alt="">
+                    
+                    <div class="card-body">
+                        <a href="{% url 'detail' r.id %}">
+                            <h4 class="card-title">{{r.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                          <a href="{% url 'author' r.post_author.name.username %}"><p class="card-author">{{r.post_author.name}} <span>in</span>  </p></a> <a href="{% url 'category' r.id %}"><p>{{more.category}}</p></a>
                         </div>
+                        <p class="post-time"> {{more.time}} </p>
+
                     </div>
                 </div>
+
+                {% endfor %}
             </div>
+
+
         </div>
-        <hr>
-        <div class="row trending">
-            <div class="trending-title">
-                <h5>Trendig article</h5>
-            </div>
-            {% for art in article %}
 
-            <div class="col-md-4 post">
-                <span>0{{forloop.counter}}</span>
-                <img src="{{art.image.url}}" alt=""> <span class="author">{{art.post_author.name }}</span>
 
-                <div class="title">
-                    <h6>{{art.title}}</h6>
-                    <span>{{art.time}}</span>
+        <!-- Popular and trending -->
+        
+        <div class="popular">
+            <div class="popular-post">
+                <div class="heading">Popular posts</div>
+
+                {% for more in popular %}
+                <div class="card text-left">
+                    <img class="card-img-top" src=" {{more.image.url}} " alt="">
+                    <div class="card-body">
+                        <a href="{% url 'detail' more.id %}">
+                            <h4 class="card-title">{{more.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                       <a href="{% url 'author' more.post_author.name.username %}">  <p class="card-author">{{more.post_author.name}} <span>in</span> </p></a> <a href="{% url 'category'  more.id %}"><p>{{more.category}} </p></a>
+                        </div>
+                        <p class="post-time"> {{more.time}} </p>
+
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
 
+                {% endfor %}
+            </div>
+
+            <div class="trending-post">
+                <div class="heading">Trending posts</div>
+                 {% for more in trending %}
+                <div class="card text-left">
+                    
+                    <div class="card-body">
+                        
+                        <a href="{% url 'detail' more.id %}">
+                            <span class="counter">0{{forloop.counter}}</span> 
+
+                            <h4 class="card-title">{{more.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                          <a href="{% url 'author' more.post_author.name.username %}">  <p class="card-author">{{more.post_author.name}} <span>in</span>  </p></a> <a href="{% url 'category'  more.id %}"><p>{{more.category}}</p></a>
+                        </div>
+                        <p class="post-time"> {{more.time}} </p>
+
+                    </div>
+                    
+                    <img class="card-img-top" src=" {{more.image.url}} " alt="">
+                </div>
+
+                {% endfor %}
+            </div>
         </div>
 
-        <hr>
-        <div class="row extra-post">
-           
-            
-            
-            {% for pst in post %}
-            <div class="col-md-10 post">
+
+        <!-- End -->
+
+
+        <!-- Other all  post -->
+        <div class="others" >
+            <div class="other-post">
+                <div class="heading">Posts</div>
+
+                {% for p in posts %}
+                <div class="card text-left">
+                    <img class="card-img-top" src=" {{p.image.url}} " alt="">
+                    <div class="card-body">
+                        <a href="{% url 'detail' p.id %}">
+                            <h4 class="card-title">{{p.title}}</h4>
+                        </a>
+                        <div class="card-other">
+                           <a href="{% url 'author' p.post_author.name.username %}"> <p class="card-author">{{p.post_author.name}} <span>in</span> </p></a> <a href="{% url 'category' p.id %}"><p>{{p.category}} </p></a>
+                        </div>
+                        <p class="post-time"> {{p.time}} </p>
+
+                    </div>
+                </div>
+
+                {% endfor %}
+                <div class="pagination" >
+                    <span class="step-links">
+                        {% if posts.has_previous %}
+                            <a href="?page={{ posts.previous_page_number }}" > <i class="fa fa-arrow-left" aria-hidden="true"></i> </a>
+                        {% endif %}
                 
-                <div class="allpost">
-                    <img class="post-image" src="{{pst.image.url}}" alt="">
-                    <img src="{{pst.image.url}}" alt=""> <span class="author">{{pst.post_author.name }}</span>
-                    <a href="{% url 'detail' pst.id %}"><h4>{{pst.title}}</h4></a>
-                    <p>{{pst.text |safe|truncatechars:30}}</p>
-                    <p>{{pst.time}}</p>
-                </div>
+                        <span class="current">
+                             {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                        </span>
+                
+                        {% if posts.has_next %}
+                            <a href="?page={{ posts.next_page_number }}"> <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+                        {% endif %}
+                    </span>
+                </div>  
             </div>
-            {% endfor %}
 
+            <div class="categories">
+                <div class="heading"> Post Category </div>
+                    <ul>
+                        <li><a href="#">Bussiness</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Health</a></li>
+                        <li><a href="#">Study</a></li>
+                        
+                    </ul>
+                
+            </div>
         </div>
 
+        <!-- End -->
 
+
+       
     </div>
+
 
 </body>
 
