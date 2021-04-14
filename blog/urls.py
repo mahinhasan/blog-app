@@ -18,7 +18,8 @@ urlpatterns = [
     path('like',views.like_post,name='like'),
     path('author/<name>',views.author,name='author'),
     path('serach',views.search,name='search'),
-    path('category/<int:id>',views.category,name='category')
+    path('category/<int:id>',views.category,name='category'),
+    path('contact',views.contact,name='contact')
     # path('update,<int:id>',views.update_comment,name='edit_comment')
     
 

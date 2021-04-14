@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body{
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif; 
+    
+}
+
+
+
+
+.contact-section{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section .contact-form h4{
+    text-align: center;
+    font-size: 30px;
+    margin: 30px;
+    text-transform: uppercase;
+
+}
+
+
+.contact-section .contact-form .text-box{
+    background-color: #000;
+    color: white;
+    width:100%;
+    padding: 10px;
+    height: 40px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    opacity: .9;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+
+.contact-section .contact-form textarea{
+    background-color: #000;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    resize: vertical;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+.contact-section .contact-form .btn{
+    width: 100%;
+}

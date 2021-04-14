@@ -9,7 +9,7 @@ from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,authenticate,logout
 from django.core.paginator import EmptyPage, Paginator,PageNotAnInteger,Page
-
+from django.core.mail import send_mail
 from django.db.models import Q
 
 # Create your views here.
@@ -280,3 +280,23 @@ def logout_user(request):
     
     logout(request)
     return redirect('/')
+
+
+def contact(request):
+
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+
+        send_mail(
+            "Hello Mahin I'm "+name,
+            message,
+            email,
+            ['mehedi.mahin.34902@gmail.com'],
+
+        )
+        return redirect('/')
+
+    return render(request,'blog/contact.html')
